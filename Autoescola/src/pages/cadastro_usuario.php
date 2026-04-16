@@ -7,7 +7,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <title>Autoescola Starter - Cadastro de Usuário</title>
-    <link rel="stylesheet" href="../assents/css/cadastro_user.css">
+    <link rel="stylesheet" href="../assets/css/cadastro_user.css">
 </head>
 
 <body>
@@ -22,14 +22,14 @@ session_start();
                         <li class="dropdown">
                             <span class="dropdown-btn">Cadastrar ▼</span>
                             <ul class="dropdown-content">
-                                <li><a href="../aluno/cadastro_aluno.php">📝 Cadastrar Aluno</a></li>
-                                <li><a href="../usuario/cadastro_usuario.php">👤 Cadastrar Usuário</a></li>
+                                <li><a href="../pages/cadastro_aluno.php">📝 Cadastrar Aluno</a></li>
+                                <li><a href="../pages/cadastro_usuario.php">👤 Cadastrar Usuário</a></li>
                             </ul>
                         </li>
                     <?php endif; ?>
-                    <li><a href="../public/index.php">Home</a></li>
-                    <li><a href="../public/quem_somos.php">Quem Somos</a></li>
-                    <li><a href="../public/contato.php">Contato</a></li>
+                    <li><a href="../pages/index.php">Home</a></li>
+                    <li><a href="../pages/quem_somos.php">Quem Somos</a></li>
+                    <li><a href="../pages/contato.php">Contato</a></li>
 
                     <!-- LOGIN À DIREITA -->
                     <li class="login-menu">
@@ -37,7 +37,7 @@ session_start();
                             <?php echo 'Bem vindo, ' . $_SESSION['nome']; ?>
                             <a href="../usuario/logout.php">[ sair ]</a>
                         <?php else: ?>
-                            <a href="../public/form_login.php">Login</a>
+                            <a href="../pages/form_login.php">Login</a>
                         <?php endif; ?>
                     </li>
                 </ul>
