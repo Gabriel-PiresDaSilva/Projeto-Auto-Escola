@@ -22,8 +22,10 @@ session_start();
                         <li class="dropdown">
                             <span class="dropdown-btn">Cadastrar ▼</span>
                             <ul class="dropdown-content">
-                                <li><a href="../pages/cadastro_aluno.php">📝 Cadastrar Aluno</a></li>
-                                <li><a href="../pages/cadastro_usuario.php">👤 Cadastrar Usuário</a></li>
+                                <li><a href="../pages/form_aluno.php">📝 Cadastrar Aluno</a></li>
+                                <li><a href="../pages/form_usuario.php">👤 Cadastrar Usuário</a></li>
+                                <li><a href="../pages/dados_aluno.php">✏️ Lista de alunos</a></li>
+                                <li><a href="../pages/dados_usuario.php">✍️ Lista de usuarios</a></li>                               
                             </ul>
                         </li>
                     <?php endif; ?>
@@ -37,7 +39,7 @@ session_start();
                             <?php echo 'Bem vindo, ' . $_SESSION['nome']; ?>
                             <a href="../usuario/logout.php">[ sair ]</a>
                         <?php else: ?>
-                            <a href="../pages/form_login.php">Login</a>
+                            <a href="../usuario/form_login.php">Login</a>
                         <?php endif; ?>
                     </li>
                 </ul>

@@ -20,11 +20,11 @@ if ($user) {
         header("Location: ../pages/index.php");
         exit;
     } else {
-        header("Location: ../pages/form_login.php?erro=2"); //quando a senha estiver errada vaai aparecer na url index.php?erro=2  e na tela do login vai informar o erro.
+        header("Location: ../usuario/form_login.php?erro=2"); //quando a senha estiver errada vaai aparecer na url index.php?erro=2  e na tela do login vai informar o erro.
         exit;
     }
 } else {
-    header("Location: ../pages/form_login.php?erro=1"); //quando o email estiver errado vai aparecer na url index.php?erro=1 e na tela do login vai informar o erro.
+    header("Location: ../usuario/form_login.php?erro=1"); //quando o email estiver errado vai aparecer na url index.php?erro=1 e na tela do login vai informar o erro.
     exit;
 }
 
