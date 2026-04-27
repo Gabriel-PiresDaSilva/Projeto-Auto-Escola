@@ -1,0 +1,477 @@
+@charset "UTF-8";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topo {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.topo h1 {
+    color: white;
+    font-size: 1.8em;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+}
+
+.menu {
+    display: flex;
+    list-style: none;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.menu li a,
+.menu li span {
+    text-decoration: none;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.menu li a:hover,
+.menu li span:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Estilo especial para o login */
+.login-menu {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 5px 15px;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: white;
+}
+
+.login-menu a {
+    padding: 5px 10px !important;
+}
+
+.login-menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* DROPDOWN MENU */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-btn {
+    cursor: pointer;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+    z-index: 1000;
+    top: 100%;
+    left: 0;
+    margin-top: 5px;
+    overflow: hidden;
+    list-style: none;
+    padding: 0;
+}
+
+.dropdown-content li {
+    display: block;
+    width: 100%;
+}
+
+.dropdown-content li a {
+    display: block;
+    padding: 12px 20px;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 0.95em;
+    white-space: nowrap;
+}
+
+.dropdown-content li a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding-left: 25px;
+    transform: none;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeInDown 0.3s ease;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* MAIN */
+main {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+}
+
+/* FORMULÁRIO */
+.form-container {
+    background: white;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 550px;
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.form-container h1 {
+    text-align: center;
+    color: #667eea;
+    font-size: 2em;
+    margin-bottom: 10px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.form-container h1::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 2px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 0.95em;
+}
+
+.usuario-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* GRUPOS DE FORMULÁRIO */
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 0.95em;
+}
+
+.form-group label::after {
+    content: " *";
+    color: #f44336;
+    font-weight: bold;
+}
+
+.form-group input,
+.form-group select {
+    padding: 12px 15px;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1em;
+    font-family: inherit;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+.form-group input:hover,
+.form-group select:hover {
+    border-color: #764ba2;
+}
+
+/* ESTILO PARA SELECT */
+.form-group select {
+    cursor: pointer;
+    background-color: white;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23667eea' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 15px;
+}
+
+.form-group select option {
+    padding: 10px;
+}
+
+/* PLACEHOLDER */
+::placeholder {
+    color: #999;
+    font-size: 0.9em;
+}
+
+/* BOTÕES */
+.form-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.btn-submit,
+.btn-reset,
+.btn-cancel {
+    padding: 12px 25px;
+    font-size: 1em;
+    font-weight: bold;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-family: inherit;
+}
+
+.btn-submit {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    flex: 1;
+}
+
+.btn-submit:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-reset {
+    background-color: #ff9800;
+    color: white;
+    flex: 1;
+}
+
+.btn-reset:hover {
+    background-color: #f57c00;
+    transform: translateY(-2px);
+}
+
+.btn-cancel {
+    background-color: #f44336;
+    color: white;
+    flex: 1;
+    text-align: center;
+}
+
+.btn-cancel:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+}
+
+/* FOOTER */
+footer {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 0.9em;
+    margin-top: auto;
+}
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+}
+
+/* RESPONSIVIDADE */
+@media (max-width: 768px) {
+    .topo {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .menu {
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+    }
+    
+    .menu li {
+        width: 100%;
+    }
+    
+    .menu li a,
+    .menu li span {
+        display: block;
+        text-align: center;
+        padding: 10px 15px;
+        font-size: 1em;
+    }
+    
+    .login-menu {
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .dropdown {
+        width: 100%;
+    }
+    
+    .dropdown-content {
+        position: static;
+        width: 100%;
+        box-shadow: none;
+        margin-top: 5px;
+    }
+    
+    .dropdown-content li a {
+        text-align: center;
+        padding: 10px 20px;
+    }
+    
+    .form-container {
+        padding: 25px;
+        margin: 0 15px;
+    }
+    
+    .form-container h1 {
+        font-size: 1.6em;
+    }
+    
+    .form-buttons {
+        flex-direction: column;
+    }
+    
+    .btn-submit,
+    .btn-reset,
+    .btn-cancel {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    .topo {
+        padding: 15px;
+    }
+    
+    .topo h1 {
+        font-size: 1.4em;
+    }
+    
+    .form-container {
+        padding: 20px;
+    }
+    
+    .form-container h1 {
+        font-size: 1.4em;
+    }
+    
+    .subtitle {
+        font-size: 0.85em;
+    }
+    
+    .form-group input,
+    .form-group select {
+        padding: 10px 12px;
+        font-size: 0.9em;
+    }
+    
+    .form-group label {
+        font-size: 0.85em;
+    }
+}
+
+/* EFEITO DE FOCO NOS BOTÕES */
+.btn-submit:focus,
+.btn-reset:focus,
+.btn-cancel:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.3);
+}
+
+/* ANIMAÇÃO PARA O FORMULÁRIO */
+.form-container:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s ease;
+}
