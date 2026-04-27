@@ -228,12 +228,7 @@ main {
     box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
 }
 
-/* BARRA DE PESQUISA */
-.search-bar {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
+
 
 .search-bar input {
     flex: 1;

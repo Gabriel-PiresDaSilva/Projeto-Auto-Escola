@@ -67,7 +67,6 @@ header {
     transform: translateY(-2px);
 }
 
-/* Estilo especial para o login */
 .login-menu {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 5px 15px;
@@ -185,7 +184,7 @@ main {
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     padding-bottom: 20px;
     border-bottom: 2px solid #e0e0e0;
 }
@@ -228,54 +227,16 @@ main {
     box-shadow: 0 5px 15px rgba(76, 175, 80, 0.4);
 }
 
-/* BARRA DE PESQUISA */
-.search-bar {
-    display: flex;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.search-bar input {
-    flex: 1;
-    padding: 12px 15px;
-    border: 2px solid #e0e0e0;
-    border-radius: 8px;
-    font-size: 1em;
-    transition: all 0.3s ease;
-}
-
-.search-bar input:focus {
-    outline: none;
-    border-color: #667eea;
-    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-}
-
-.btn-pesquisar {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    color: white;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    font-weight: bold;
-    transition: all 0.3s ease;
-}
-
-.btn-pesquisar:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
-}
-
 /* TABELA */
 .table-responsive {
     overflow-x: auto;
-    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 .tabela-usuario {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.9em;
+    font-size: 0.95em;
 }
 
 .tabela-usuario thead tr {
@@ -285,7 +246,7 @@ main {
 
 .tabela-usuario th,
 .tabela-usuario td {
-    padding: 12px 15px;
+    padding: 15px;
     text-align: left;
     border-bottom: 1px solid #e0e0e0;
 }
@@ -295,59 +256,26 @@ main {
     transition: background-color 0.3s ease;
 }
 
-/* ESTILO PARA O CARGO */
-.tabela-usuario td:nth-child(4) {
-    font-weight: 600;
-}
-
-.tabela-usuario td:nth-child(4):contains("Administrador") {
-    color: #4caf50;
-}
-
-/* Estilização específica para cada cargo */
-.tabela-usuario td:nth-child(4) {
-    position: relative;
-}
-
-/* Badge para o cargo */
-.tabela-usuario td:nth-child(4) {
-    display: inline-block;
-    padding: 4px 12px;
-    border-radius: 20px;
-    font-size: 0.85em;
-    font-weight: bold;
-    text-align: center;
-}
-
-/* Cores diferentes para cada cargo via JavaScript ou PHP */
-/* No PHP, você pode adicionar classes específicas */
-
-/* MENSAGEM QUANDO NÃO HÁ REGISTROS */
-.tabela-usuario td[colspan="5"] {
-    text-align: center;
-    padding: 40px;
-    color: #999;
-    font-style: italic;
-}
-
-/* AÇÕES */
-.acoes {
-    display: flex;
-    gap: 10px;
+/* ESTILO PARA A COLUNA AÇÕES - CORREÇÃO PRINCIPAL */
+.tabela-usuario .acoes {
     white-space: nowrap;
+    text-align: left;
+    vertical-align: middle;
 }
 
+/* BOTÕES DE AÇÃO */
 .btn-editar,
 .btn-excluir {
-    padding: 6px 12px;
+    display: inline-block;
+    padding: 8px 15px;
     border-radius: 5px;
     text-decoration: none;
     font-size: 0.85em;
     font-weight: bold;
     transition: all 0.3s ease;
-    display: inline-block;
     cursor: pointer;
     border: none;
+    margin: 0 3px;
 }
 
 .btn-editar {
@@ -358,6 +286,7 @@ main {
 .btn-editar:hover {
     background-color: #1976d2;
     transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(33, 150, 243, 0.3);
 }
 
 .btn-excluir {
@@ -368,6 +297,20 @@ main {
 .btn-excluir:hover {
     background-color: #d32f2f;
     transform: translateY(-2px);
+    box-shadow: 0 2px 8px rgba(244, 67, 54, 0.3);
+}
+
+.btn-editar:active,
+.btn-excluir:active {
+    transform: translateY(0);
+}
+
+/* MENSAGEM QUANDO NÃO HÁ REGISTROS */
+.tabela-usuario td[colspan="5"] {
+    text-align: center;
+    padding: 40px;
+    color: #999;
+    font-style: italic;
 }
 
 /* FOOTER */
@@ -461,27 +404,29 @@ footer {
         white-space: normal;
     }
     
-    .search-bar {
-        flex-direction: column;
-    }
-    
     .tabela-usuario {
-        font-size: 0.8em;
+        font-size: 0.85em;
     }
     
     .tabela-usuario th,
     .tabela-usuario td {
-        padding: 8px 10px;
+        padding: 10px;
     }
     
-    .acoes {
+    /* Botões empilhados no mobile */
+    .tabela-usuario .acoes {
+        display: flex;
         flex-direction: column;
-        gap: 5px;
+        gap: 8px;
+        white-space: normal;
     }
     
     .btn-editar,
     .btn-excluir {
+        display: block;
         text-align: center;
+        width: 100%;
+        margin: 0;
     }
 }
 
@@ -503,68 +448,22 @@ footer {
     }
     
     .tabela-usuario {
-        font-size: 0.7em;
+        font-size: 0.75em;
     }
     
     .tabela-usuario th,
     .tabela-usuario td {
-        padding: 6px 8px;
+        padding: 8px;
     }
     
     .btn-editar,
     .btn-excluir {
-        font-size: 0.7em;
-        padding: 4px 8px;
+        font-size: 0.75em;
+        padding: 6px 10px;
     }
 }
 
-/* CORREÇÕES ESPECÍFICAS PARA A TABELA DE USUÁRIOS */
-
-/* Garantir que a tabela fique com largura adequada */
-.tabela-usuario {
-    min-width: 600px;
-}
-
-@media (max-width: 600px) {
-    .table-responsive {
-        overflow-x: auto;
-    }
-}
-
-/* Estilo para o cargo Administrador (opcional - via PHP adicione uma classe) */
-.cargo-administrador {
-    background-color: #4caf50;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    display: inline-block;
-    font-size: 0.85em;
-    font-weight: bold;
-}
-
-/* Estilo para o cargo Instrutor (opcional - via PHP adicione uma classe) */
-.cargo-instrutor {
-    background-color: #ff9800;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    display: inline-block;
-    font-size: 0.85em;
-    font-weight: bold;
-}
-
-/* Estilo para o cargo Padrão (opcional - via PHP adicione uma classe) */
-.cargo-padrao {
-    background-color: #9e9e9e;
-    color: white;
-    padding: 4px 12px;
-    border-radius: 20px;
-    display: inline-block;
-    font-size: 0.85em;
-    font-weight: bold;
-}
-
-/* Animação para a tabela */
+/* ANIMAÇÃO PARA AS LINHAS DA TABELA */
 .tabela-usuario tbody tr {
     animation: fadeInRow 0.3s ease-out;
 }
@@ -577,25 +476,5 @@ footer {
     to {
         opacity: 1;
         transform: translateX(0);
-    }
-}
-
-/* Estilo para o link do botão "Novo Usuario" quando desabilitado */
-.btn-novo:active {
-    transform: translateY(1px);
-}
-
-/* Melhoria na visualização do dropdown em mobile */
-@media (max-width: 768px) {
-    .dropdown-content {
-        position: relative;
-        width: 100%;
-        border-radius: 8px;
-        margin-top: 5px;
-    }
-    
-    .dropdown-content li a {
-        text-align: center;
-        padding: 10px 15px;
     }
 }

@@ -33,7 +33,6 @@ session_start();
                     <li><a href="../pages/quem_somos.php">Quem Somos</a></li>
                     <li><a href="../pages/contato.php">Contato</a></li>
 
-                    <!-- LOGIN À DIREITA -->
                     <li class="login-menu">
                         <?php if (isset($_SESSION['email'])): ?>
                             <?php echo 'Bem vindo, ' . $_SESSION['nome']; ?>
@@ -73,16 +72,9 @@ session_start();
             <div class="header-table">
                 <h1>Gerenciar Alunos</h1>
                 <p class="subtitle">Visualize, edite ou remova alunos cadastrados</p>
-                <a href="../aluno/cadastro_aluno.php" class="btn-novo">+ Novo Aluno</a>
+                <a href="../pages/form_aluno.php" class="btn-novo">+ Novo Aluno</a>
             </div>
 
-            <!-- Barra de pesquisa -->
-            <div class="search-bar">
-                <input type="text" id="pesquisa" placeholder="🔍 Pesquisar aluno por nome, CPF ou e-mail...">
-                <button class="btn-pesquisar">Pesquisar</button>
-            </div>
-
-            <!-- Tabela de alunos -->
             <div class="table-responsive">
                 <table class="tabela-alunos">
                     <thead>
@@ -110,7 +102,7 @@ session_start();
                             <td><?php echo $row ['categoria'] ?></td>
                             <td><?php echo $row ['Instrutor'] ?></td>
                             <td class="acoes">
-                                <a href="../usuario/form_update_aluno.php?id_aluno=<?php echo $row['id_aluno']; ?>" class="btn-editar">✏️ Editar</a>
+                                <a href="../pages/form_update_aluno.php?id_aluno=<?php echo $row['id_aluno']; ?>" class="btn-editar">✏️ Editar</a>
                                 <a href="#" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este aluno?')">🗑️ Excluir</a>
                             </td>
                         </tr>

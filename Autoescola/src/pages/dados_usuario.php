@@ -32,8 +32,7 @@ session_start();
                     <li><a href="../pages/index.php">Home</a></li>
                     <li><a href="../pages/quem_somos.php">Quem Somos</a></li>
                     <li><a href="../pages/contato.php">Contato</a></li>
-
-                    <!-- LOGIN À DIREITA -->
+                 
                     <li class="login-menu">
                         <?php if (isset($_SESSION['email'])): ?>
                             <?php echo 'Bem vindo, ' . $_SESSION['nome']; ?>
@@ -63,16 +62,9 @@ session_start();
             <div class="header-table">
                 <h1>Gerenciar Usuarios</h1>
                 <p class="subtitle">Visualize, edite ou remova usuarios cadastrados</p>
-                <a href="../aluno/form_usuario.php" class="btn-novo">+ Novo Usuario</a>
+                <a href="../pages/form_usuario.php" class="btn-novo">+ Novo Usuario</a>
             </div>
-
-            <!-- Barra de pesquisa -->
-            <div class="search-bar">
-                <input type="text" id="pesquisa" placeholder="🔍 Pesquisar usuario por nome,e-mail ou cargo">
-                <button class="btn-pesquisar">Pesquisar</button>
-            </div>
-
-            <!-- Tabela de alunos -->
+      
             <div class="table-responsive">
                 <table class="tabela-usuario">
                     <thead>
@@ -94,8 +86,8 @@ session_start();
                             <td><?php echo $row ['email'] ?></td>
                             <td><?php echo $row ['cargo'] ?></td>
                             <td class="acoes">
-                                <a href="../usuario/form_update_usuario.php?id_usuario=<?php echo $row['id_usuario']; ?>" class="btn-editar">✏️ Editar</a>
-                                <a href="#" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este usuario?')">🗑️ Excluir</a>
+                                <a href="../pages/form_update_usuario.php?id_usuario=<?php echo $row['id_usuario']; ?>" class="btn-editar">✏️ Editar</a>
+                                <a href="../usuario/delete_usuario.php" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este usuario?')">🗑️ Excluir</a>
                             </td>
                         </tr>
                         <?php endforeach;?>

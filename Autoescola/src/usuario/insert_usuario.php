@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     try {
         if ($stmt->execute()) {
-            header('location: ../usuario/cadastro_usuario.php');
+            header('location: ../pages/dados_usuario.php');
             exit;
         } else {
             echo 'Erro ao cadastrar o usuario';
@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($e->errorInfo[1] == '2627') {
             echo "<script>
                     alert('erro: email ja cadastrado'); 
-                    window.location.href = '../usuario/cadastro_usuario.php';
+                    window.location.href = '../pages/dados_usuario.php';
                   </script>";
         } else {
             echo "Erro" . $e->getMessage();

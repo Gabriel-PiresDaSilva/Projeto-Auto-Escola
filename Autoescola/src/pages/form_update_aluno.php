@@ -27,7 +27,7 @@ if (isset($_GET['id_aluno'])) {
 <head>
     <meta charset="UTF-8">
     <title>Autoescola Starter - Alterar Cadastro de Aluno</title>
-    <link rel="stylesheet" href="../assets/css/cadastro_aluno.css">
+    <link rel="stylesheet" href="../assets/css/form_aluno.css">
 </head>
 
 <body>
@@ -99,7 +99,7 @@ if (isset($_GET['id_aluno'])) {
                     <div class="form-row">
                         <div class="form-group">
                             <label for="cpf">CPF *</label>
-                            <input type="text" id="cpf" name="cpf" value="<?php echo htmlspecialchars($aluno['cpf']); ?>" required placeholder="000.000.000-00">
+                            <input type="text" id="cpf" name="cpf" value="<?php echo htmlspecialchars($aluno['cpf']); ?>" placeholder="000.000.000-00">
                         </div>
 
                         <div class="form-group">
@@ -201,8 +201,8 @@ if (isset($_GET['id_aluno'])) {
 
                 <!-- Botões -->
                 <div class="form-buttons">
-                    <button type="submit" class="btn-submit">Alterar dados</button>
-                    <a href="../aluno/dados_aluno.php" class="btn-cancel">Voltar</a>
+                    <button type="submit" class="btn-submit">Alterar </button>
+                    <a href="../pages/dados_aluno.php" class="btn-cancel">Voltar</a>
                 </div>
             </form>
         </div>

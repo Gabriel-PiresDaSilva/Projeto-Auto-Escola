@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 try {
         if ($stmt->execute()) {
-            header('location: ../aluno/dados_aluno.php');
+            header('location: ../pages/dados_aluno.php');
             exit;
         } else {
             echo 'Erro ao cadastrar o aluno';
@@ -47,7 +47,7 @@ try {
         if ($e->errorInfo[1] == '2627') {
             echo "<script>
                     alert('erro: cpf ja cadastrado'); 
-                    window.location.href = '../aluno/dados_aluno.php';
+                    window.location.href = '../pages/dados_aluno.php';
                   </script>";
         } else {
             echo "Erro" . $e->getMessage();

@@ -53,7 +53,7 @@ session_start();
             <h1>Cadastro de Usuário</h1>
             <p class="subtitle">Preencha os dados para criar um novo usuário</p>
 
-            <form action="insert_usuario.php" method="POST" class="usuario-form">
+            <form action="../usuario/insert_usuario.php" method="POST" class="usuario-form">
                 
                 <div class="form-group">
                     <label for="nome">Nome Completo *</label>
@@ -82,7 +82,7 @@ session_start();
                 <div class="form-buttons">
                     <button type="submit" class="btn-submit">Cadastrar Usuário</button>
                     <button type="reset" class="btn-reset">Limpar</button>
-                    <a href="index.php" class="btn-cancel">Cancelar</a>
+                    <a href="../pages/index.php" class="btn-cancel">Cancelar</a>
                 </div>
             </form>
         </div>
