@@ -87,8 +87,19 @@ session_start();
                             <td><?php echo $row ['cargo'] ?></td>
                             <td class="acoes">
                                 <a href="../pages/form_update_usuario.php?id_usuario=<?php echo $row['id_usuario']; ?>" class="btn-editar">✏️ Editar</a>
-                                <a href="../usuario/delete_usuario.php" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este usuario?')">🗑️ Excluir</a>
-                            </td>
+                               <!-- <a href="../usuario/delete_usuario.php" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este usuario?')">🗑️ Excluir</a>
+                        -->
+                            
+                    <form method="POST" action="../usuario/delete_usuario.php" 
+      style="display:inline;"
+      onsubmit="return confirm('Tem certeza que deseja excluir este usuario?');">
+
+    <input type="hidden" name="id_usuario" value="<?= $row['id_usuario']; ?>">
+
+    <button type="submit" class="btn-excluir">🗑️ Excluir</button>
+</form>    
+                    
+                    </td>
                         </tr>
                         <?php endforeach;?>
                         <?php else: ?>
