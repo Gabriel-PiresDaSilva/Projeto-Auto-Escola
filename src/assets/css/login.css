@@ -23,13 +23,11 @@ body::before {
   position: absolute;
   width: 6px;
   height: 100%;
-  background: repeating-linear-gradient(
-    to bottom,
-    #FFC107,
-    #FFC107 20px,
-    transparent 20px,
-    transparent 40px
-  );
+  background: repeating-linear-gradient(to bottom,
+      #FFC107,
+      #FFC107 20px,
+      transparent 20px,
+      transparent 40px);
   left: 50%;
   transform: translateX(-50%);
   opacity: 0.2;
@@ -53,6 +51,7 @@ body::before {
     opacity: 0;
     transform: translateY(30px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -131,7 +130,7 @@ body::before {
 }
 
 .btn-login:active {
-    transform: translateY(0);
+  transform: translateY(0);
 }
 
 .erro {
@@ -142,13 +141,23 @@ body::before {
   margin-top: 20px;
   text-align: center;
   font-size: 0.9em;
-    animation: shakeError 0.3s ease;
+  animation: shakeError 0.3s ease;
 }
 
 @keyframes shakeError {
-    0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+
+  0%,
+  100% {
+    transform: translateX(0);
+  }
+
+  25% {
+    transform: translateX(-5px);
+  }
+
+  75% {
+    transform: translateX(5px);
+  }
 }
 
 /* MENSAGEM DE SUCESSO (opcional) */
@@ -166,70 +175,72 @@ body::before {
   .login-container {
     padding: 25px;
   }
-    
-    .icone {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .icone::before {
-        font-size: 30px;
-    }
-    
-    .form-group label {
-        font-size: 0.85em;
-    }
-    
-    .input {
-        padding: 10px 12px;
-        font-size: 0.9em;
-    }
-    
-    .btn-login {
-        padding: 12px;
-        font-size: 1em;
-    }
+
+  .icone {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icone::before {
+    font-size: 30px;
+  }
+
+  .form-group label {
+    font-size: 0.85em;
+  }
+
+  .input {
+    padding: 10px 12px;
+    font-size: 0.9em;
+  }
+
+  .btn-login {
+    padding: 12px;
+    font-size: 1em;
+  }
 }
 
 /* SCROLLBAR PERSONALIZADA */
 ::-webkit-scrollbar {
-    width: 10px;
+  width: 10px;
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+  background: #f1f1f1;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    border-radius: 5px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
 }
 
 /* EFEITO DE CARREGAMENTO (opcional) */
 .btn-login.loading {
-    position: relative;
-    color: transparent;
+  position: relative;
+  color: transparent;
 }
 
 .btn-login.loading::after {
-    content: '';
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    top: 50%;
-    left: 50%;
-    margin-left: -10px;
-    margin-top: -10px;
-    border: 2px solid white;
-    border-radius: 50%;
-    border-top-color: transparent;
-    animation: spin 0.8s linear infinite;
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  top: 50%;
+  left: 50%;
+  margin-left: -10px;
+  margin-top: -10px;
+  border: 2px solid white;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
 }
 
 @keyframes spin {
-    to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
