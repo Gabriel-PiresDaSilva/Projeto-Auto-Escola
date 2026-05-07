@@ -17,6 +17,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_plano = trim($_POST['plano']);
     $id_usuario = trim($_POST['instrutor']);
 
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
 /*  $verifica = $pdo->prepare("select id_aluno from aluno where cpf = :cpf");
     $verifica->bindParam(':cpf', $cpf);
     $verifica->execute(); */
@@ -28,7 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':senha', $senha);
+    $stmt->bindParam(':senha', $senhaHash);
     $stmt->bindParam(':cpf', $cpf);
     $stmt->bindParam(':telefone', $telefone);
     $stmt->bindParam(':endereco', $endereco);

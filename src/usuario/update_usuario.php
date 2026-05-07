@@ -9,6 +9,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $senha = trim($_POST['senha']);
     $cargo = trim($_POST['cargo']);
 
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
 
     $sql = "update usuario set nome=:nome,email=:email,senha=:senha,cargo=:cargo where id_usuario=:id_usuario";
 
@@ -16,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt->bindParam(':id_usuario', $id_usuario);
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':senha', $senha);
+    $stmt->bindParam(':senha', $senhaHash);
     $stmt->bindParam(':cargo', $cargo);
 
 

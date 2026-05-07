@@ -8,13 +8,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $senha = trim($_POST['senha']);
     $cargo = trim($_POST['cargo']);
 
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+
     $sql = "INSERT INTO usuario (nome, email, senha, cargo) VALUES (:nome, :email, :senha, :cargo)";
 
     $stmt = $pdo->prepare($sql);
 
     $stmt->bindParam(':nome', $nome);
     $stmt->bindParam(':email', $email);
-    $stmt->bindParam(':senha', $senha);
+    $stmt->bindParam(':senha', $senhaHash);
     $stmt->bindParam(':cargo', $cargo);
 
     try {

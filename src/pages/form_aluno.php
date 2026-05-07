@@ -169,12 +169,23 @@ session_start();
             </select>
           </div>
 
+          <?php
+          include_once '../config/conexao.php';
+
+          $sql = "SELECT id_usuario, nome from usuario where cargo = 'instrutor' ";
+          $stmt = $pdo->prepare($sql);
+          $stmt->execute();
+          $instrutores = $stmt->fetchAll(PDO::FETCH_ASSOC);
+          
+          ?>
+
           <div class="form-group">
             <label for="instrutor">Escolha seu Instrutor<strong>*</strong></label>
             <select id="instrutor" name="instrutor" required>
               <option value="">Selecione o instrutor</option>
-              <option value="2" <?php echo (isset($id_usuario) && $id_usuario == 2) ? 'selected' : '' ?>>Thainara Pires </option>
-              <option value="3" <?php echo (isset($id_usuario) && $id_usuario == 3) ? 'selected' : '' ?>>Pedro Augusto </option>
+              <?php foreach($instrutores as $instrutor): ?>
+              <option value="<?php echo $instrutor['id_usuario']; ?>" <?php echo (isset($id_usuario) && $id_usuario == $instrutor['id_usuario']) ? 'selected' : '' ?> ><?php echo htmlspecialchars($instrutor['nome']) ?> </option>
+              <?php endforeach;?>
             </select>
           </div>
         </fieldset>

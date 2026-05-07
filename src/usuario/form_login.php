@@ -33,10 +33,8 @@
 
     <?php
     if (isset($_GET['erro']) && $_GET['erro'] == '1') {
-      echo "<div class='erro'>Email incorreto.</div>";
-    } else if (isset($_GET['erro']) && $_GET['erro'] == '2') {
-      echo "<div class='erro'>Senha incorreta.</div>";
-    }
+      echo "<div class='erro'>Email ou senha incorreto.</div>";
+    } 
     ?>
 
   </div>
