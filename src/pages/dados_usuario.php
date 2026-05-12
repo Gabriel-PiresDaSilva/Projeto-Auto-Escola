@@ -32,7 +32,7 @@ session_start();
                     <li><a href="../pages/index.php">Home</a></li>
                     <li><a href="../pages/quem_somos.php">Quem Somos</a></li>
                     <li><a href="../pages/contato.php">Contato</a></li>
-                 
+
                     <li class="login-menu">
                         <?php if (isset($_SESSION['email'])): ?>
                             <?php echo 'Bem vindo, ' . $_SESSION['nome']; ?>
@@ -55,7 +55,7 @@ session_start();
     $stmt->execute();
 
     $usuario = $stmt->fetchAll(PDO::FETCH_ASSOC);
-     ?>
+    ?>
 
     <main>
         <div class="container">
@@ -64,7 +64,7 @@ session_start();
                 <p class="subtitle">Visualize, edite ou remova usuarios cadastrados</p>
                 <a href="../pages/form_usuario.php" class="btn-novo">+ Novo Usuario</a>
             </div>
-      
+
             <div class="table-responsive">
                 <table class="tabela-usuario">
                     <thead>
@@ -77,34 +77,32 @@ session_start();
                         </tr>
                     </thead>
                     <tbody>
-                        <?php if(count($usuario) > 0): ?>
-                        
-                        <?php foreach ($usuario as $row): ?>
-                        <tr>
-                            <td><?php echo $row ['id_usuario'] ?></td>
-                            <td><?php echo $row ['nome'] ?></td>
-                            <td><?php echo $row ['email'] ?></td>
-                            <td><?php echo $row ['cargo'] ?></td>
-                            <td class="acoes">
-                                <a href="../pages/form_update_usuario.php?id_usuario=<?php echo $row['id_usuario']; ?>" class="btn-editar">✏️ Editar</a>
-                               <!-- <a href="../usuario/delete_usuario.php" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este usuario?')">🗑️ Excluir</a>
-                        -->
-                            
-                    <form method="POST" action="../usuario/delete_usuario.php" 
-      style="display:inline;"
-      onsubmit="return confirm('Tem certeza que deseja excluir este usuario?');">
+                        <?php if (count($usuario) > 0): ?>
 
-    <input type="hidden" name="id_usuario" value="<?= $row['id_usuario']; ?>">
+                            <?php foreach ($usuario as $row): ?>
+                                <tr>
+                                    <td><?php echo $row['id_usuario'] ?></td>
+                                    <td><?php echo $row['nome'] ?></td>
+                                    <td><?php echo $row['email'] ?></td>
+                                    <td><?php echo $row['cargo'] ?></td>
+                                    <td class="acoes">
+                                        <a href="../pages/form_update_usuario.php?id_usuario=<?php echo $row['id_usuario']; ?>" class="btn-editar">✏️ Editar</a>
 
-    <button type="submit" class="btn-excluir">🗑️ Excluir</button>
-</form>    
-                    
-                    </td>
-                        </tr>
-                        <?php endforeach;?>
+                                        <form method="POST" action="../usuario/delete_usuario.php"
+                                            style="display:inline;"
+                                            onsubmit="return confirm('Tem certeza que deseja excluir este usuario?');">
+
+                                            <input type="hidden" name="id_usuario" value="<?= $row['id_usuario']; ?>">
+
+                                            <button type="submit" class="btn-excluir">🗑️ Excluir</button>
+                                        </form>
+
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
                         <?php else: ?>
                             <tr colspan="8">Nenhum usuario encontrado</tr>
-                            <?php endif?>
+                        <?php endif ?>
 
                     </tbody>
                 </table>

@@ -176,7 +176,6 @@ if (isset($_GET['id_aluno'])) {
                     </div>
                 </fieldset>
 
-                <!-- Plano e Instrutor -->
                 <fieldset>
                     <legend>Curso e Instrutor</legend>
 
@@ -188,18 +187,29 @@ if (isset($_GET['id_aluno'])) {
                             <option value="2" <?php echo ($aluno['id_plano'] == 2) ? 'selected' : '' ?>>Plano CNH Moto</option>
                         </select>
                     </div>
+<?php
+include_once '../config/conexao.php';
 
-                    <div class="form-group">
-                        <label for="instrutor">Escolha seu Instrutor</label>
-                        <select id="instrutor" name="instrutor" required>
-                            <option value="">Selecione o instrutor</option>
-                            <option value="2" <?php echo ($aluno['id_usuario'] == 2) ? 'selected' : '' ?>>Thainara Pires</option>
-                            <option value="3" <?php echo ($aluno['id_usuario'] == 3) ? 'selected' : '' ?>>Pedro Augusto</option>
-                        </select>
-                    </div>
+$sql = "SELECT id_usuario, nome FROM usuario WHERE cargo = 'instrutor'";
+$stmt = $pdo->prepare($sql);
+$stmt->execute();
+$instrutores = $stmt->fetchAll(PDO::FETCH_ASSOC);
+?>
+
+<div class="form-group">
+    <label for="instrutor">Escolha seu Instrutor</label>
+    <select id="instrutor" name="instrutor" required>
+        <option value="">Selecione o instrutor</option>
+        <?php foreach($instrutores as $instrutor): ?>
+            <option value="<?php echo $instrutor['id_usuario']; ?>" 
+                <?php echo ($aluno['id_usuario'] == $instrutor['id_usuario']) ? 'selected' : ''; ?>>
+                <?php echo htmlspecialchars($instrutor['nome']); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+</div>
                 </fieldset>
 
-                <!-- Botões -->
                 <div class="form-buttons">
                     <button type="submit" class="btn-submit">Alterar </button>
                     <a href="../pages/dados_aluno.php" class="btn-cancel">Voltar</a>
