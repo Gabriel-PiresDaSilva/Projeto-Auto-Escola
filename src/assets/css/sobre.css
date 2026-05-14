@@ -1,0 +1,203 @@
+@charset "UTF-8";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(180deg, #0f0f0f 0%, #1a1a1a 100%);
+  line-height: 1.6;
+  position: relative;
+}
+
+/* pista */
+body::before {
+  content: "";
+  position: fixed;
+  width: 6px;
+  height: 100%;
+  background: repeating-linear-gradient(to bottom,
+      #FFC107,
+      #FFC107 20px,
+      transparent 20px,
+      transparent 40px);
+  left: 50%;
+  transform: translateX(-50%);
+  opacity: 0.15;
+  z-index: -1;
+}
+
+/* MAIN */
+main {
+  flex: 1;
+  max-width: 1200px;
+  margin: 40px auto;
+  padding: 0 20px;
+  width: 100%;
+}
+
+.container {
+  background: rgba(20, 20, 20, 0.95);
+  border-radius: 15px;
+  padding: 50px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.6),
+    0 0 0 1px rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(6px);
+  animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* Página Index */
+.box1 {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.box1 h1 {
+  text-align: center;
+  color: #ccc;
+  font-size: 2em;
+  margin-bottom: 20px;
+  position: relative;
+  padding-bottom: 15px;
+}
+
+.box1 h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 4px;
+  background: linear-gradient(180deg, #1a1a1a 0%, #2c2c2c 100%);
+  border-radius: 2px;
+}
+
+.box1 p {
+  text-align: center;
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  font-size: 1.1em;
+}
+
+.box1 h2 {
+  text-align: center;
+  color: #ccc;
+  margin: 25px 0 15px 0;
+  font-size: 1.5em;
+}
+
+.box1 ul {
+  list-style: none;
+  padding-left: 0;
+  margin: 20px 0;
+}
+
+.box1 ul li {
+  padding: 10px 0;
+  text-align: center;
+  color: #555;
+  font-size: 1.1em;
+  position: relative;
+  padding-left: 30px;
+}
+
+.box1 ul li:before {
+  content: "✓";
+  color: #ccc;
+  position: absolute;
+  left: 20%;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+/* Página Quem Somos */
+.container h1 {
+  text-align: center;
+  color: #fff;
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  position: relative;
+  padding-bottom: 15px;
+  letter-spacing: 1px;
+}
+
+.container h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 4px;
+  background: #FFC107;
+  border-radius: 2px;
+}
+
+.container h2 {
+  color: #ddd;
+  font-size: 1.4em;
+  margin: 30px 0 20px 0;
+  text-align: center;
+  font-weight: 400;
+}
+
+.container p {
+  color: #aaa;
+  font-size: 1.05em;
+  line-height: 1.9;
+  margin-bottom: 25px;
+  text-align: justify;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.container h3 {
+  color: #FFC107;
+  font-size: 1.2em;
+  margin: 25px auto;
+  text-align: center;
+  font-style: italic;
+  max-width: 800px;
+}
+
+
+/* SCROLLBAR */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1a1a1a 0%, #2c2c2c 100%);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #1a1a1a 0%, #2c2c2c 100%);
+}
