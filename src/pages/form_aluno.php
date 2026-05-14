@@ -19,7 +19,6 @@ include '../components/header.php';
 
       <form action="../aluno/insert_aluno.php" method="POST" class="cadastro-form">
 
-        <!-- Dados Pessoais -->
         <fieldset>
           <legend>Dados Pessoais</legend>
 
@@ -53,7 +52,6 @@ include '../components/header.php';
           </div>
         </fieldset>
 
-        <!-- Endereço -->
         <fieldset>
           <legend>Endereço</legend>
 
@@ -121,7 +119,6 @@ include '../components/header.php';
           </div>
         </fieldset>
 
-        <!-- Plano e Instrutor -->
         <fieldset>
           <legend>Curso e Instrutor</legend>
 
@@ -149,13 +146,12 @@ include '../components/header.php';
             <select id="instrutor" name="instrutor" required>
               <option value="">Selecione o instrutor</option>
               <?php foreach ($instrutores as $instrutor): ?>
-                <option value="<?php echo $instrutor['id_usuario']; ?>" <?php echo (isset($id_usuario) && $id_usuario == $instrutor['id_usuario']) ? 'selected' : '' ?>><?php echo htmlspecialchars($instrutor['nome']) ?> </option>
+                <option value="<?php echo $instrutor['id_usuario']; ?>" <?php echo (isset($id_usuario) && $id_usuario == $instrutor['id_usuario']) ? 'selected' : '' ?>><?php echo ($instrutor['nome']) ?> </option>
               <?php endforeach; ?>
             </select>
           </div>
         </fieldset>
 
-        <!-- Botões -->
         <div class="form-buttons">
           <button type="submit" class="btn-submit">Cadastrar Aluno</button>
           <button type="reset" class="btn-reset">Limpar</button>

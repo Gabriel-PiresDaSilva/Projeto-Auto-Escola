@@ -29,7 +29,6 @@
         <li><a href="../pages/quem_somos.php">Quem Somos</a></li>
         <li><a href="../pages/contato.php">Contato</a></li>
 
-        <!-- LOGIN À DIREITA -->
         <li class="login-menu">
           <?php if (isset($_SESSION['email'])): ?>
             <?php echo 'Bem vindo, ' . $_SESSION['nome']; ?>

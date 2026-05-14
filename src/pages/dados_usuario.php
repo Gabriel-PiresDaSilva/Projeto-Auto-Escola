@@ -27,9 +27,9 @@ include '../components/header.php';
     <div class="container">
       <div class="header-table">
         <h1>Gerenciar Alunos<br>
-          <p class="subtitle">Visualize, edite ou remova alunos cadastrados</p>
+          <p class="subtitle">Visualize, edite ou remova usuarios cadastrados</p>
         </h1>
-        <a href="../pages/form_aluno.php" class="btn-novo">+ Novo Aluno</a>
+        <a href="../pages/form_usuario.php" class="btn-novo">+ Novo usuario</a>
       </div>
 
       <div class="table-responsive">
