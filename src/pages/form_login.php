@@ -34,7 +34,7 @@
     <?php
     if (isset($_GET['erro']) && $_GET['erro'] == '1') {
       echo "<div class='erro'>Email ou senha incorreto.</div>";
-    } 
+    }
     ?>
 
   </div>
