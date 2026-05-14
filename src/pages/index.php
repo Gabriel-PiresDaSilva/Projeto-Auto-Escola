@@ -49,11 +49,8 @@ include '../components/header.php';
     </div>
 
   </main>
-
-  <footer>
-    <p>&copy; 2026 Autoescola Starter</p>
-  </footer>
-
 </body>
-
 </html>
+<?php
+include '../components/footer.php';
+?>

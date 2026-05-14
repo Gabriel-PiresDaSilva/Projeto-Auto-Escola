@@ -23,11 +23,8 @@ include '../components/header.php';
       <h3>Autoescola Starter – Sua jornada no trânsito começa conosco.</h3>
     </div>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Autoescola Starter</p>
-  </footer>
-
 </body>
-
 </html>
+<?php
+include '../components/footer.php';
+?>

@@ -215,15 +215,6 @@ fieldset {
   color: #FFC107;
 }
 
-/* FOOTER */
-footer {
-  background: linear-gradient(180deg, #111 0%, #1f1f1f 100%);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  margin-top: auto;
-}
 
 /* SCROLLBAR */
 ::-webkit-scrollbar {

@@ -141,16 +141,16 @@ include '../components/header.php';
           $stmt = $pdo->prepare($sql);
           $stmt->execute();
           $instrutores = $stmt->fetchAll(PDO::FETCH_ASSOC);
-          
+
           ?>
 
           <div class="form-group">
             <label for="instrutor">Escolha seu Instrutor<strong>*</strong></label>
             <select id="instrutor" name="instrutor" required>
               <option value="">Selecione o instrutor</option>
-              <?php foreach($instrutores as $instrutor): ?>
-              <option value="<?php echo $instrutor['id_usuario']; ?>" <?php echo (isset($id_usuario) && $id_usuario == $instrutor['id_usuario']) ? 'selected' : '' ?> ><?php echo htmlspecialchars($instrutor['nome']) ?> </option>
-              <?php endforeach;?>
+              <?php foreach ($instrutores as $instrutor): ?>
+                <option value="<?php echo $instrutor['id_usuario']; ?>" <?php echo (isset($id_usuario) && $id_usuario == $instrutor['id_usuario']) ? 'selected' : '' ?>><?php echo htmlspecialchars($instrutor['nome']) ?> </option>
+              <?php endforeach; ?>
             </select>
           </div>
         </fieldset>
@@ -164,11 +164,9 @@ include '../components/header.php';
       </form>
     </div>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Autoescola Starter</p>
-  </footer>
-
 </body>
 
 </html>
+<?php
+include '../components/footer.php';
+?>

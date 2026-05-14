@@ -73,10 +73,8 @@ if (isset($_GET['id_usuario'])) {
       </form>
     </div>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Autoescola Starter</p>
-  </footer>
-  
 </body>
 </html>
+<?php
+include '../components/footer.php';
+?>

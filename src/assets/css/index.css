@@ -39,17 +39,6 @@ main {
   width: 100%;
 }
 
-
-/* FOOTER */
-footer {
-  background: linear-gradient(180deg, #1a1a1a 0%, #2c2c2c 100%);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  margin-top: auto;
-}
-
 /* ANIMAÇÕES */
 @keyframes fadeInUp {
   from {

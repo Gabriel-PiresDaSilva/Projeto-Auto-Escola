@@ -23,7 +23,7 @@ include '../components/header.php';
       <div class="contato-info">
         <div class="card">
           <h3>📞 Telefone / WhatsApp</h3>
-          <p>(XX) XXXX-XXXX</p>
+          <p>(11) 12345-6784</p>
         </div>
         <div class="card">
           <h3>✉️ E-mail</h3>
@@ -44,10 +44,9 @@ include '../components/header.php';
     </section>
   </main>
 
-  <footer>
-    <p>&copy; 2026 Autoescola Starter</p>
-  </footer>
-
 </body>
 
 </html>
+<?php
+include '../components/footer.php';
+?>

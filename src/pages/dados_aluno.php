@@ -94,11 +94,9 @@ left join usuario u on a.id_usuario = u.id_usuario";
       </div>
     </div>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Autoescola Starter</p>
-  </footer>
-
 </body>
 
 </html>
+<?php
+include '../components/footer.php';
+?>

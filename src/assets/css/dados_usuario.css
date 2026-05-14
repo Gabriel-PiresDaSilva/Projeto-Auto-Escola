@@ -142,7 +142,7 @@ main {
 .tabela-usuario th,
 .tabela-usuario td {
   padding: 15px;
-  text-align: left;
+  text-align: center;
   border-bottom: 1px solid #e0e0e0;
 }
 
@@ -162,7 +162,7 @@ main {
 /* ESTILO PARA A COLUNA AÇÕES - CORREÇÃO PRINCIPAL */
 .tabela-usuario .acoes {
   white-space: nowrap;
-  text-align: left;
+  text-align: center;
   vertical-align: middle;
 }
 
@@ -215,15 +215,6 @@ main {
   font-style: italic;
 }
 
-/* FOOTER */
-footer {
-  background: linear-gradient(180deg, #1a1a1a 0%, #2c2c2c 100%);
-  color: white;
-  text-align: center;
-  padding: 20px;
-  font-size: 0.9em;
-  margin-top: auto;
-}
 
 /* SCROLL */
 ::-webkit-scrollbar {

@@ -137,8 +137,8 @@ if (isset($_GET['id_aluno'])) {
           </div>
 
           <div class="form-group">
-            <label for="cep">CEP</label>
-            <input type="text" id="cep" name="cep" value="<?php echo htmlspecialchars($aluno['cep']); ?>" required placeholder="00000-000">
+            <label for="cep">CEP*</label>
+            <input type="text" id="cep" name="cep" value="<?php echo htmlspecialchars($aluno['cep']); ?>">
           </div>
         </fieldset>
 
@@ -183,11 +183,9 @@ if (isset($_GET['id_aluno'])) {
       </form>
     </div>
   </main>
-
-  <footer>
-    <p>&copy; 2026 Autoescola Starter</p>
-  </footer>
-
 </body>
 
 </html>
+<?php
+include '../components/footer.php';
+?>
