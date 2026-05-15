@@ -26,7 +26,6 @@ include '../components/header.php';
       </div>
     </div>
 
-    <!-- BENEFÍCIOS -->
     <div class="beneficios">
       <h2>Por que escolher a Starter?</h2>
 

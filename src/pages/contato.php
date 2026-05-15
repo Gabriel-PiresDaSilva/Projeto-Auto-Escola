@@ -19,7 +19,7 @@ include '../components/header.php';
     </section>
 
     <section class="contato-grid">
-      <!-- INFORMAÇÕES -->
+
       <div class="contato-info">
         <div class="card">
           <h3>📞 Telefone / WhatsApp</h3>

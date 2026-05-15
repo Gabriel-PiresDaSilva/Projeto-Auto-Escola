@@ -71,7 +71,6 @@ left join usuario u on a.id_usuario = u.id_usuario";
                   <td><?php echo $row['Instrutor'] ?></td>
                   <td class="acoes">
                     <a href="../pages/form_update_aluno.php?id_aluno=<?php echo $row['id_aluno']; ?>" class="btn-editar">✏️ Editar</a>
-                    <!-- <a href="#" class="btn-excluir" onclick="return confirm('Tem certeza que deseja excluir este aluno?')">🗑️ Excluir</a> -->
 
                     <form method="POST" action="../aluno/delete_aluno.php"
                       style="display:inline;"

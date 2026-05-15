@@ -43,17 +43,17 @@ if (isset($_GET['id_usuario'])) {
 
         <div class="form-group">
           <label for="nome">Nome Completo *</label>
-          <input type="text" id="nome" name="nome" value="<?php echo htmlspecialchars($usuario['nome']); ?>" required placeholder="Digite o nome completo">
+          <input type="text" id="nome" name="nome" value="<?php echo ($usuario['nome']); ?>" required placeholder="Digite o nome completo">
         </div>
 
         <div class="form-group">
           <label for="email">E-mail *</label>
-          <input type="email" id="email" name="email" required value="<?php echo htmlspecialchars($usuario['email']); ?>" placeholder="email@exemplo.com">
+          <input type="email" id="email" name="email" required value="<?php echo ($usuario['email']); ?>" placeholder="email@exemplo.com">
         </div>
 
         <div class="form-group">
           <label for="senha">Senha *</label>
-          <input type="password" id="senha" name="senha" required value="<?php echo htmlspecialchars($usuario['senha']); ?>" placeholder="Digite a senha">
+          <input type="password" id="senha" name="senha" required value="<?php echo ($usuario['senha']); ?>" placeholder="Digite a senha">
         </div>
 
         <div class="form-group">
