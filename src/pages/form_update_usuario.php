@@ -42,22 +42,22 @@ if (isset($_GET['id_usuario'])) {
         <input type="hidden" name="id_usuario" value="<?php echo $usuario['id_usuario'] ?>">
 
         <div class="form-group">
-          <label for="nome">Nome Completo *</label>
+          <label for="nome">Nome Completo*</label>
           <input type="text" id="nome" name="nome" value="<?php echo ($usuario['nome']); ?>" required placeholder="Digite o nome completo">
         </div>
 
         <div class="form-group">
-          <label for="email">E-mail *</label>
+          <label for="email">E-mail*</label>
           <input type="email" id="email" name="email" required value="<?php echo ($usuario['email']); ?>" placeholder="email@exemplo.com">
         </div>
 
         <div class="form-group">
-          <label for="senha">Senha *</label>
-          <input type="password" id="senha" name="senha" required value="<?php echo ($usuario['senha']); ?>" placeholder="Digite a senha">
+          <label for="senha">Senha*</label>
+          <input type="password" id="senha" name="senha" placeholder="Digite a senha">
         </div>
 
         <div class="form-group">
-          <label for="cargo">Cargo *</label>
+          <label for="cargo">Cargo*</label>
           <select id="cargo" name="cargo" required>
             <option value="">Selecione o cargo</option>
             <option value="Administrador" <?= ($usuario['cargo'] == 'Administrador') ? 'selected' : '' ?>>Administrador</option>

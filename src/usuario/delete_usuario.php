@@ -26,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       exit;
     }
 
-    $sql = "DELETE FROM usuario WHERE id_usuario = :id_usuario";
+    $sql = "delete from usuario where id_usuario = :id_usuario";
     $stmt = $pdo->prepare($sql);
     $stmt->bindParam(':id_usuario', $id_usuario);
 
