@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../assets/css/login.css">
-  <title>Formulario de login</title>
+  <link rel="icon" type="image/png" href="https://cdn-icons-png.flaticon.com/512/1085/1085961.png">
+  <title>Login</title>
 </head>
 
 <body>

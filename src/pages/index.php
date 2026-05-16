@@ -7,7 +7,7 @@ include '../components/header.php';
 
 <head>
   <meta charset="UTF-8">
-  <title>Auto escola Starter</title>
+  <title>Autoescola Starter</title>
   <link rel="stylesheet" href="../assets/css/index.css">
 </head>
 

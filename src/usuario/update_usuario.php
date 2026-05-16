@@ -9,16 +9,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $senha = trim($_POST['senha']);
   $cargo = trim($_POST['cargo']);
 
-  $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+if (!empty($senha)) {
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-
-  $sql = "update usuario set nome=:nome,email=:email,senha=:senha,cargo=:cargo where id_usuario=:id_usuario";
+    $sql = "update usuario set nome=:nome,email=:email,senha=:senha,cargo=:cargo where id_usuario=:id_usuario";
+  } else {
+    $sql = "update usuario set nome=:nome,email=:email,cargo=:cargo where id_usuario=:id_usuario";
+  }
 
   $stmt = $pdo->prepare($sql);
   $stmt->bindParam(':id_usuario', $id_usuario);
   $stmt->bindParam(':nome', $nome);
   $stmt->bindParam(':email', $email);
-  $stmt->bindParam(':senha', $senhaHash);
+    if (!empty($senha)) {
+    $stmt->bindParam(':senha', $senhaHash);
+  }
   $stmt->bindParam(':cargo', $cargo);
 
 
@@ -27,7 +32,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       header('location: ../pages/dados_usuario.php');
       exit;
     } else {
-      echo 'Erro ao cadastrar o usuario';
+      echo 'Erro ao editar o usuario';
     }
   } catch (PDOException $e) {
     if ($e->errorInfo[1] == '2627') {

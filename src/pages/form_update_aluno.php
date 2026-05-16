@@ -55,7 +55,7 @@ if (isset($_GET['id_aluno'])) {
 
             <div class="form-group">
               <label for="senha">Senha *</label>
-              <input type="password" id="senha" name="senha" value="<?php echo ($aluno['senha']); ?>" required placeholder="Digite a senha">
+              <input type="password" id="senha" name="senha" placeholder="Digite a senha">
             </div>
           </div>
 

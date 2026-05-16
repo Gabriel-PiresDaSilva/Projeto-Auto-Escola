@@ -18,15 +18,48 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $id_plano = trim($_POST['plano']);
   $id_usuario = trim($_POST['instrutor']);
 
-  $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
+  if (!empty($senha)) {
+    $senhaHash = password_hash($senha, PASSWORD_DEFAULT);
 
-  $sql = "update aluno set nome=:nome,email=:email,senha=:senha,cpf=:cpf,telefone=:telefone,endereco=:endereco,numero=:numero,complemento=:complemento,bairro=:bairro,estado=:estado,cep=:cep,id_plano=:plano,id_usuario=:instrutor where id_aluno=:id_aluno";
+    $sql = "update aluno 
+            set nome=:nome,
+                email=:email,
+                senha=:senha,
+                cpf=:cpf,
+                telefone=:telefone,
+                endereco=:endereco,
+                numero=:numero,
+                complemento=:complemento,
+                bairro=:bairro,
+                estado=:estado,
+                cep=:cep,
+                id_plano=:plano,
+                id_usuario=:instrutor
+            where id_aluno=:id_aluno";
+  } else {
+    $sql = "update aluno 
+            set nome=:nome,
+                email=:email,
+                cpf=:cpf,
+                telefone=:telefone,
+                endereco=:endereco,
+                numero=:numero,
+                complemento=:complemento,
+                bairro=:bairro,
+                estado=:estado,
+                cep=:cep,
+                id_plano=:plano,
+                id_usuario=:instrutor
+            where id_aluno=:id_aluno";
+  }
 
   $stmt = $pdo->prepare($sql);
   $stmt->bindParam(':id_aluno', $id_aluno);
   $stmt->bindParam(':nome', $nome);
   $stmt->bindParam(':email', $email);
-  $stmt->bindParam(':senha', $senhaHash);
+  if (!empty($senha)) {
+    $stmt->bindParam(':senha', $senhaHash);
+  }
   $stmt->bindParam(':cpf', $cpf);
   $stmt->bindParam(':telefone', $telefone);
   $stmt->bindParam(':endereco', $endereco);
@@ -43,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       header('location: ../pages/dados_aluno.php');
       exit;
     } else {
-      echo 'Erro ao cadastrar o aluno';
+      echo 'Erro ao editar o aluno';
     }
   } catch (PDOException $e) {
     if ($e->errorInfo[1] == '2627') {

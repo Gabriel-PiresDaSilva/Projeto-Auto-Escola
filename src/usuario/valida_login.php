@@ -16,7 +16,6 @@ if ($user && password_verify($senha, $user["senha"])) {
     $_SESSION["email"] = $user["email"];
     $_SESSION["nome"] = $user["nome"];
     $_SESSION["cargo"] = $user["cargo"];
-    $_SESSION["tipo_usuario"] = "usuario"; 
     header("location: ../pages/index.php");
     exit;
 }
