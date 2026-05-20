@@ -26,7 +26,7 @@ if (isset($_GET['id_usuario'])) {
 
 <head>
   <meta charset="UTF-8">
-  <title>Autoescola Starter - Cadastro de Usuário</title>
+  <title>Autoescola Starter - Alterar cadastro de Aluno</title>
   <link rel="stylesheet" href="../assets/css/form_user.css">
 </head>
 
@@ -34,26 +34,24 @@ if (isset($_GET['id_usuario'])) {
 
   <main>
     <div class="form-container">
-      <h1>Cadastro de Usuário</h1>
-      <p class="subtitle">Preencha os dados para criar um novo usuário</p>
-
+      <h1>Alterar cadastro de Usuário</h1><br>
       <form action="../usuario/update_usuario.php" method="POST" class="usuario-form">
 
         <input type="hidden" name="id_usuario" value="<?php echo $usuario['id_usuario'] ?>">
 
         <div class="form-group">
           <label for="nome">Nome Completo*</label>
-          <input type="text" id="nome" name="nome" value="<?php echo ($usuario['nome']); ?>" required placeholder="Digite o nome completo">
+          <input type="text" id="nome" name="nome" maxlength="100" value="<?php echo ($usuario['nome']); ?>" required placeholder="Digite o nome completo">
         </div>
 
         <div class="form-group">
           <label for="email">E-mail*</label>
-          <input type="email" id="email" name="email" required value="<?php echo ($usuario['email']); ?>" placeholder="email@exemplo.com">
+          <input type="email" id="email" name="email" maxlength="100" required value="<?php echo ($usuario['email']); ?>" placeholder="email@exemplo.com">
         </div>
 
         <div class="form-group">
           <label for="senha">Senha*</label>
-          <input type="password" id="senha" name="senha" placeholder="Digite a senha">
+          <input type="password" id="senha" name="senha" maxlength="100" placeholder="Digite a senha">
         </div>
 
         <div class="form-group">
