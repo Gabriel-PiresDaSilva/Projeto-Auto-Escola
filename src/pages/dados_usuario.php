@@ -26,10 +26,10 @@ include '../components/header.php';
   <main>
     <div class="container">
       <div class="header-table">
-        <h1>Gerenciar Usuarios<br>
-          <p class="subtitle">Visualize, edite ou remova usuarios cadastrados</p>
+        <h1>Gerenciar Usuários<br>
+          <p class="subtitle">Visualize, edite ou remova usuários cadastrados</p>
         </h1>
-        <a href="../pages/form_usuario.php" class="btn-novo">+ Novo usuario</a>
+        <a href="../pages/form_usuario.php" class="btn-novo">+ Novo usuário</a>
       </div>
 
       <div class="table-responsive">
