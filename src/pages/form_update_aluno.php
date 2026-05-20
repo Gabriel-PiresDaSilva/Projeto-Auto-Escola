@@ -43,31 +43,31 @@ if (isset($_GET['id_aluno'])) {
           <legend>Dados Pessoais</legend>
 
           <div class="form-group">
-            <label for="nome">Nome Completo *</label>
-            <input type="text" id="nome" name="nome" value="<?php echo ($aluno['nome']); ?>" required placeholder="Digite o nome completo">
+            <label for="nome">Nome Completo*</label>
+            <input type="text" id="nome" name="nome" maxlength="100" value="<?php echo ($aluno['nome']); ?>" required placeholder="Digite o nome completo">
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="email">E-mail *</label>
-              <input type="email" id="email" name="email" value="<?php echo ($aluno['email']); ?>" required placeholder="seu@email.com">
+              <label for="email">E-mail*</label>
+              <input type="email" id="email" name="email" maxlength="100" value="<?php echo ($aluno['email']); ?>" required placeholder="seu@email.com">
             </div>
 
             <div class="form-group">
-              <label for="senha">Senha *</label>
-              <input type="password" id="senha" name="senha" placeholder="Digite a senha">
+              <label for="senha">Senha*</label>
+              <input type="password" id="senha" name="senha" maxlength="100" placeholder="Digite a senha">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="cpf">CPF *</label>
-              <input type="text" id="cpf" name="cpf" maxlength="11" value="<?php echo ($aluno['cpf']); ?>" placeholder="000.000.000-00">
+              <label for="cpf">CPF*</label>
+              <input type="text" id="cpf" name="cpf" maxlength="14" value="<?php echo ($aluno['cpf']); ?>" placeholder="000.000.000-00">
             </div>
 
             <div class="form-group">
-              <label for="telefone">Telefone *</label>
-              <input type="tel" id="telefone" name="telefone" maxlength="15" value="<?php echo ($aluno['telefone']); ?>" required placeholder="(00) 00000-0000">
+              <label for="telefone">Telefone*</label>
+              <input type="text" id="telefone" name="telefone" maxlength="11" inputmode="numeric" pattern="[0-9]+" value="<?php echo ($aluno['telefone']); ?>" required placeholder="11999999999">
             </div>
           </div>
         </fieldset>
@@ -76,26 +76,26 @@ if (isset($_GET['id_aluno'])) {
           <legend>Endereço</legend>
 
           <div class="form-group">
-            <label for="endereco">Endereço *</label>
-            <input type="text" id="endereco" name="endereco" value="<?php echo ($aluno['endereco']); ?>" required placeholder="Rua, Avenida, etc">
+            <label for="endereco">Endereço*</label>
+            <input type="text" id="endereco" name="endereco" maxlength="100" value="<?php echo ($aluno['endereco']); ?>" required placeholder="Rua, Avenida, etc">
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="numero">Número *</label>
-              <input type="text" id="numero" name="numero" value="<?php echo ($aluno['numero']); ?>" required placeholder="Nº">
+              <label for="numero">Número*</label>
+              <input type="text" id="numero" name="numero" maxlength="100" value="<?php echo ($aluno['numero']); ?>" required placeholder="Nº">
             </div>
 
             <div class="form-group">
               <label for="complemento">Complemento</label>
-              <input type="text" id="complemento" name="complemento" value="<?php echo ($aluno['complemento']); ?>" placeholder="Apto, Bloco, Casa">
+              <input type="text" id="complemento" name="complemento" maxlength="20" value="<?php echo ($aluno['complemento']); ?>" placeholder="Apto, Bloco, Casa">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
-              <label for="bairro">Bairro</label>
-              <input type="text" id="bairro" name="bairro" value="<?php echo ($aluno['bairro']); ?>" required placeholder="Seu bairro">
+              <label for="bairro">Bairro*</label>
+              <input type="text" id="bairro" name="bairro" maxlength="100" value="<?php echo ($aluno['bairro']); ?>" required placeholder="Seu bairro">
             </div>
 
             <div class="form-group">
@@ -134,7 +134,7 @@ if (isset($_GET['id_aluno'])) {
 
           <div class="form-group">
             <label for="cep">CEP*</label>
-            <input type="text" id="cep" name="cep" value="<?php echo ($aluno['cep']); ?>">
+            <input type="text" id="cep" name="cep" maxlength="9" inputmode="numeric" pattern="[0-9]+" value="<?php echo ($aluno['cep']); ?>" required placeholder="00000000">
           </div>
         </fieldset>
 

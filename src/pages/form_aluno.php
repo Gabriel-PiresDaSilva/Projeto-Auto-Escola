@@ -24,30 +24,30 @@ include '../components/header.php';
 
           <div class="form-group">
             <label for="nome">Nome Completo<strong>*</strong></label>
-            <input type="text" id="nome" name="nome" value="<?php echo isset($nome) ? $nome : ""; ?>" required placeholder="Digite o nome completo">
+            <input type="text" id="nome" name="nome" maxlength="100" value="<?php echo isset($nome) ? $nome : ""; ?>" required placeholder="Digite o nome completo">
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="email">E-mail<strong>*</strong></label>
-              <input type="email" id="email" name="email" value="<?php isset($email) ? $email : ""; ?>" required placeholder="seu@email.com">
+              <input type="email" id="email" name="email" maxlength="100" value="<?php isset($email) ? $email : ""; ?>" required placeholder="seu@email.com">
             </div>
 
             <div class="form-group">
               <label for="senha">Senha<strong>*</strong></label>
-              <input type="password" id="senha" name="senha" value="<?php isset($senha) ? $senha : ""; ?>" required placeholder="Digite a senha">
+              <input type="password" id="senha" name="senha" maxlength="100" value="<?php isset($senha) ? $senha : ""; ?>" required placeholder="Digite a senha">
             </div>
           </div>
 
           <div class="form-row">
             <div class="form-group">
               <label for="cpf">CPF<strong>*</strong></label>
-              <input type="text" id="cpf" maxlength="11" name="cpf" value="<?php isset($cpf) ? $cpf : ""; ?>" required placeholder="000.000.000-00">
+              <input type="text" id="cpf" maxlength="14" name="cpf" value="<?php isset($cpf) ? $cpf : ""; ?>" required placeholder="000.000.000-00">
             </div>
 
             <div class="form-group">
               <label for="telefone">Telefone<strong>*</strong></label>
-              <input type="tel" id="telefone" maxlength="15" name="telefone" value="<?php isset($telefone) ? $telefone : ""; ?>" required placeholder="(00) 00000-0000">
+              <input type="text" id="telefone" name="telefone" maxlength="11" inputmode="numeric" pattern="[0-9]+" value="<?php isset($telefone) ? $telefone : ""; ?>" required placeholder="11999999999">
             </div>
           </div>
         </fieldset>
@@ -57,7 +57,7 @@ include '../components/header.php';
 
           <div class="form-group">
             <label for="endereco">Endereço<strong>*</strong></label>
-            <input type="text" id="endereco" name="endereco" value="<?php isset($endereco) ? $endereco : ""; ?>" required placeholder="Rua, Avenida, etc">
+            <input type="text" id="endereco" name="endereco" maxlength="100" value="<?php isset($endereco) ? $endereco : ""; ?>" required placeholder="Rua, Avenida, etc">
           </div>
 
           <div class="form-row">
@@ -68,7 +68,7 @@ include '../components/header.php';
 
             <div class="form-group">
               <label for="complemento">Complemento</label>
-              <input type="text" id="complemento" name="complemento" value="<?php isset($complemento) ? $complemento : ""; ?>" placeholder="Apto, Bloco, Casa">
+              <input type="text" id="complemento" name="complemento" maxlength="20" value="<?php isset($complemento) ? $complemento : ""; ?>" placeholder="Apto, Bloco, Casa">
             </div>
           </div>
 
@@ -115,7 +115,7 @@ include '../components/header.php';
 
           <div class="form-group">
             <label for="cep">CEP<strong>*</strong></label>
-            <input type="text" id="cep" name="cep" value="<?php isset($cep) ? $cep : ""; ?>" required placeholder="00000-000">
+            <input type="text" id="cep" name="cep" maxlength="9" inputmode="numeric" pattern="[0-9]+" value="<?php isset($cep) ? $cep : ""; ?>" required placeholder="00000000">
           </div>
         </fieldset>
 

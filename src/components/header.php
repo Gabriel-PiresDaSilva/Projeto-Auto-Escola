@@ -19,8 +19,8 @@
             <ul class="dropdown-content">
               <li><a href="../pages/form_aluno.php">📝 Cadastrar Aluno</a></li>
               <li><a href="../pages/form_usuario.php">👤 Cadastrar Usuário</a></li>
-              <li><a href="../pages/dados_aluno.php">✏️ Lista de alunos</a></li>
-              <li><a href="../pages/dados_usuario.php">✍️ Lista de usuarios</a></li>
+              <li><a href="../pages/dados_aluno.php">✏️ Lista de Alunos</a></li>
+              <li><a href="../pages/dados_usuario.php">✍️ Lista de Usuários</a></li>
 
             </ul>
           </li>
